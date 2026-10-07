@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AegisAI - Ciberseguridad Autónoma & IA</title>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Hoja de Estilos Principal -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Fondo de Red de Nodos Dinámica -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Barra de Navegación -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-shield-halved glow-icon"></i>
+            <span>AEGIS<span class="highlight">.AI</span></span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#simulador">Analizador IA</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#recursos">Recursos Globales</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <a href="#simulador" class="btn btn-neon"><i class="fa-solid fa-terminal"></i> Probar Ecosistema</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="badge"><i class="fa-solid fa-brain"></i> Motor de Protección Neuronal v4.2</div>
+            <h1>Protección Neuronal en <span class="text-gradient">Tiempo Real</span> contra Ciberamenazas</h1>
+            <p>Defensa autónoma de infraestructura impulsada por aprendizaje profundo. Detectamos, neutralizamos y predecimos vectores de ataque complejos antes de que afecten tus operaciones.</p>
+            
+            <div class="hero-btns">
+                <a href="#simulador" class="btn btn-primary"><i class="fa-solid fa-bolt"></i> Iniciar Análisis de Red</a>
+                <a href="https://attack.mitre.org/" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fa-solid fa-diagram-project"></i> Matriz MITRE ATT&CK <i class="fa-solid fa-arrow-up-right-from-square small-icon"></i></a>
+            </div>
+
+            <!-- Métricas en vivo -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3 id="stat-threats">99.98%</h3>
+                    <p>Precisión de Detección</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="stat-latency">&lt; 1.2ms</h3>
+                    <p>Tiempo de Respuesta IA</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="stat-blocked">2.4M+</h3>
+                    <p>Amenazas Mitigadas/Día</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seccion Simulador de Escaneo & Terminal -->
+    <section id="simulador" class="simulador-section">
+        <div class="section-title">
+            <h2>Simulador de <span class="text-gradient">Escaneo y Defensa IA</span></h2>
+            <p>Prueba el motor heurístico en un entorno controlado y monitorea la consola en tiempo real.</p>
+        </div>
+
+        <div class="simulador-container">
+            <!-- Panel de Control de Análisis -->
+            <div class="scanner-card">
+                <h3><i class="fa-solid fa-crosshairs"></i> Panel de Análisis de Target</h3>
+                <div class="input-group">
+                    <label for="target-ip">Dirección IP / Dominio a Escanear:</label>
+                    <input type="text" id="target-ip" value="192.168.1.105" placeholder="Ej: 10.0.4.1 o miempresa.com">
+                </div>
+
+                <div class="scan-types">
+                    <button class="btn-scan active" data-type="quick"><i class="fa-solid fa-bolt"></i> Escaneo Rápido</button>
+                    <button class="btn-scan" data-type="deep"><i class="fa-solid fa-magnifying-glass-chart"></i> Análisis Heurístico Profundo</button>
+                    <button class="btn-scan" data-type="ai"><i class="fa-solid fa-robot"></i> Auditoría Zero-Day IA</button>
+                </div>
+
+                <button id="btn-start-scan" class="btn btn-primary btn-full"><i class="fa-solid fa-play"></i> Ejecutar Diagnóstico</button>
+
+                <div class="progress-container">
+                    <div class="progress-labels">
+                        <span id="progress-status">Estado: En espera</span>
+                        <span id="progress-percent">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Console Terminal Log -->
+            <div class="terminal-card">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="terminal-title">aegis-core-logger@sec-node-01:~</span>
+                </div>
+                <div class="terminal-body" id="terminal-output">
+                    <p class="log-system">[SYS_INIT] Motor de Inteligencia Artificial cargado correctamente.</p>
+                    <p class="log-info">[NET_MONITOR] Escuchando tráfico de red en interfaces eth0, wlan0...</p>
+                    <p class="log-success">[OK] Modelo neuronal sincronizado con bases de datos globales CVE-2026.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Módulos de Protección / Servicios -->
+    <section id="servicios" class="services-section">
+        <div class="section-title">
+            <h2>Arquitectura de <span class="text-gradient">Defensa Automatizada</span></h2>
+            <p>Módulos integrados impulsados por IA para proteger infraestructuras críticas.</p>
+        </div>
+
+        <div class="grid-cards">
+            <div class="glass-card">
+                <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
+                <h3>Prevención de Intrusiones (NIPS)</h3>
+                <p>Analiza patrones de tráfico anómalos mediante modelos de aprendizaje no supervisado bloqueando ataques DDoS en capa 7 de manera instantánea.</p>
+                <a href="https://www.cisa.gov/" target="_blank" rel="noopener noreferrer" class="card-link">Saber más en CISA <i class="fa-solid fa-external-link"></i></a>
+            </div>
+
+            <div class="glass-card">
+                <div class="card-icon"><i class="fa-solid fa-bug-slash"></i></div>
+                <h3>Detección Zero-Day Heurística</h3>
+                <p>Monitoreo comportamental de malware en sandbox aislado. Identifica variantes no registradas antes de la ejecución del payload.</p>
+                <a href="https://www.sans.org/" target="_blank" rel="noopener noreferrer" class="card-link">Investigación SANS <i class="fa-solid fa-external-link"></i></a>
+            </div>
+
+            <div class="glass-card">
+                <div class="card-icon"><i class="fa-solid fa-lock"></i></div>
+                <h3>Cifrado Cuántico Adaptativo</h3>
+                <p>Protección de datos en tránsito y reposo con algoritmos de encriptación poscuántica asistidos por generación de llaves por IA.</p>
+                <a href="https://csrc.nist.gov/projects/post-quantum-cryptography" target="_blank" rel="noopener noreferrer" class="card-link">Estándar NIST PQC <i class="fa-solid fa-external-link"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hub de Recursos Externos Relacionados -->
+    <section id="recursos" class="resources-section">
+        <div class="section-title">
+            <h2>Ecosistema de <span class="text-gradient">Recursos Oficiales</span></h2>
+            <p>Accede directamente a los portales globales líderes en ciberseguridad, bases de vulnerabilidades y marcos normativos.</p>
+        </div>
+
+        <div class="resources-grid">
+            <a href="https://nvd.nist.gov/" target="_blank" rel="noopener noreferrer" class="resource-box">
+                <div class="res-header">
+                    <i class="fa-solid fa-database"></i>
+                    <h4>NIST NVD</h4>
+                </div>
+                <p>National Vulnerability Database: Repositorio oficial del gobierno de EE. UU. sobre vulnerabilidades CVE.</p>
+                <span class="btn-text">Ir a NVD NIST <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <a href="https://owasp.org/" target="_blank" rel="noopener noreferrer" class="resource-box">
+                <div class="res-header">
+                    <i class="fa-solid fa-code"></i>
+                    <h4>OWASP Foundation</h4>
+                </div>
+                <p>Estándares y el reconocido Top 10 de riesgos de seguridad en aplicaciones web y APIs.</p>
+                <span class="btn-text">Explorar OWASP <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <a href="https://www.virustotal.com/" target="_blank" rel="noopener noreferrer" class="resource-box">
+                <div class="res-header">
+                    <i class="fa-solid fa-virus-slash"></i>
+                    <h4>VirusTotal</h4>
+                </div>
+                <p>Herramienta global para inspección de archivos, hashes, dominios e IPs sospechosas en tiempo real.</p>
+                <span class="btn-text">Analizar en VirusTotal <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener noreferrer" class="resource-box">
+                <div class="res-header">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <h4>CISA KEV</h4>
+                </div>
+                <p>Catálogo oficial de vulnerabilidades explotadas activamente en entornos de producción.</p>
+                <span class="btn-text">Ver Catálogo KEV <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contacto / Solicitud de Auditoría -->
+    <section id="contacto" class="contact-section">
+        <div class="contact-card">
+            <h2>Solicitar Auditoría de <span class="text-gradient">Infraestructura IA</span></h2>
+            <p>Contacta a nuestros especialistas en respuesta a incidentes y fortificación de redes.</p>
+
+            <form id="contact-form">
+                <div class="form-row">
+                    <input type="text" id="contact-name" placeholder="Nombre / Alias" required>
+                    <input type="email" id="contact-email" placeholder="Correo Corporativo" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" id="contact-org" placeholder="Organización / Empresa">
+                    <select id="contact-service">
+                        <option value="audit">Auditoría Red Team con IA</option>
+                        <option value="soc">Implementación SOC Inteligente</option>
+                        <option value="incident">Respuesta Inmediata a Incidentes</option>
+                    </select>
+                </div>
+                <textarea id="contact-message" rows="4" placeholder="Describe brevemente el alcance de la infraestructura a evaluar..." required></textarea>
+                
+                <button type="submit" class="btn btn-primary btn-full"><i class="fa-solid fa-paper-plane"></i> Enviar Solicitud Encritada</button>
+            </form>
+            <div id="form-response" class="form-response"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fa-solid fa-shield-halved"></i> AEGIS.AI
+            </div>
+            <p>© 2026 AEGIS Cyber AI Systems. Plataforma de investigación y simulación de ciberdefensa.</p>
+            <div class="social-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Principal JS -->
+    <script src="script.js"></script>
+</body>
+</html>
